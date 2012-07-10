@@ -222,6 +222,7 @@ int UnigramDictionary::getSuggestions(ProximityInfo *proximityInfo,
         for (int j = 0; j < suggestedWordsCount; ++j) {
             short unsigned int* w = outWords + j * MAX_WORD_LENGTH;
             char s[MAX_WORD_LENGTH];
+            (void) s; /* suppress unused-but-set error */
             for (int i = 0; i <= MAX_WORD_LENGTH; i++) s[i] = w[i];
             AKLOGI("%s %i", s, frequencies[j]);
         }
