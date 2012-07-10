@@ -46,6 +46,7 @@ inline static void dumpEditDistance10ForDebug(int *editDistanceTable,
         AKLOGI("EditDistanceTable");
         for (int i = 0; i <= 10; ++i) {
             int c[11];
+            (void) c[0];  /* suppress unused-but-set error */
             for (int j = 0; j <= 10; ++j) {
                 if (j < editDistanceTableWidth + 1 && i < outputLength + 1) {
                     c[j] = (editDistanceTable + i * (editDistanceTableWidth + 1))[j];
